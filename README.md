@@ -26,7 +26,7 @@ dependencies:
   my_custom_widgets:
     git:
       url: https://github.com/CodeJudgeOrg/CodeJudge-Library
-      ref: v1.0.0 # Replace by the version you want to use
+      ref: v.1.0.0 # Replace by the version you want to use
 ```
 You can find the version of each release at the [release page](https://github.com/CodeJudgeOrg/CodeJudge-Library/releases).
 
