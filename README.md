@@ -23,7 +23,7 @@ A library containing common custom widgets, datamodels, etc.
 Open your `pubspeck.yaml` and search for `dependencies`. Then add these lines:
 ```
 dependencies:
-  my_custom_widgets:
+  code_judge_library:
     git:
       url: https://github.com/CodeJudgeOrg/CodeJudge-Library
       ref: v.1.0.0 # Replace by the version you want to use
@@ -34,7 +34,7 @@ You can find the version of each release at the [release page](https://github.co
 Open your `pubspeck.yaml` and search for `dependencies`. Then add these lines:
 ```
 dependencies:
-  my_custom_widgets:
+  code_judge_library:
     git:
       url: https://github.com/CodeJudgeOrg/CodeJudge-Library
       ref: main
