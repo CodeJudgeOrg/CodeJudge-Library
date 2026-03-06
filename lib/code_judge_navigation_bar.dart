@@ -62,7 +62,7 @@ class CodeJudgeNavigationBar extends StatelessWidget {
                   ),
                   Divider(thickness: 1, height: 1, color: theme.colorScheme.primary),
                   for (int i = 0; i < items.length - 1; i++) // Items
-                    MyNavigationBarItem(
+                    CodeJudgeNavigationBarItem(
                       icon: items[i].icon,
                       label: items[i].label,
                       selected: selectedIndex == i,
@@ -70,7 +70,7 @@ class CodeJudgeNavigationBar extends StatelessWidget {
                     ),
                   const Spacer(),
                   Divider(thickness: 1, height: 1, color: theme.colorScheme.primary),
-                  MyNavigationBarItem( // Settings
+                  CodeJudgeNavigationBarItem( // Settings
                     icon: items.last.icon,
                     label: items.last.label,
                     selected: selectedIndex == items.length - 1,
@@ -127,7 +127,7 @@ class CodeJudgeNavigationBar extends StatelessWidget {
                 child: Column(
                   children: [
                     for (int i = 0; i < items.length - 1; i++) // Items
-                      MyNavigationBarItem(
+                      CodeJudgeNavigationBarItem(
                         icon: items[i].icon,
                         label: items[i].label,
                         selected: selectedIndex == i,
@@ -135,7 +135,7 @@ class CodeJudgeNavigationBar extends StatelessWidget {
                       ),
                     const Spacer(),
                     Divider(thickness: 1, height: 1),
-                    MyNavigationBarItem( // Settings
+                    CodeJudgeNavigationBarItem( // Settings
                       icon: items.last.icon,
                       label: items.last.label,
                       selected: selectedIndex == items.length - 1,
@@ -163,13 +163,13 @@ class MyNavigationBarItemData {
   });
 }
 
-class MyNavigationBarItem extends StatelessWidget {
+class CodeJudgeNavigationBarItem extends StatelessWidget {
   final IconData icon;
   final String label;
   final bool selected;
   final VoidCallback onTap;
 
-  const MyNavigationBarItem({
+  const CodeJudgeNavigationBarItem({
     super.key,
     required this.icon,
     required this.label,
