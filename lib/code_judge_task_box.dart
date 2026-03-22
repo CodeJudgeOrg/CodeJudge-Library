@@ -24,7 +24,7 @@ class CodeJudgeTaskBox extends StatelessWidget{
       child: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
-          spacing: 80,
+          spacing: 8,
           children: [
             // Draw a nice box containing a button and the task
             Container(
