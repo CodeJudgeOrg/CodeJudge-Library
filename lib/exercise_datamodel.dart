@@ -22,6 +22,7 @@ class ExerciseDatamodel {
   String solution;
   int difficultyLevel;
   String hint;
+  bool isSelected;
 
   ExerciseDatamodel({
     required this.id,
@@ -31,5 +32,6 @@ class ExerciseDatamodel {
     required this.solution,
     required this.difficultyLevel,
     this.hint = "No hint available.",
+    this.isSelected = false,
   });
 }
