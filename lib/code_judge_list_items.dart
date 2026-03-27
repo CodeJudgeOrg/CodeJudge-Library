@@ -23,6 +23,7 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
   final ValueChanged<TapUpDetails>? onRightClick;
   final ValueChanged<Offset>? onMenuClick;
   final String note;
+  final bool isSelected;
 
   const CodeJudgeDesktopAndTabletItem({
     super.key,
@@ -32,6 +33,7 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
     this.onRightClick,
     this.onMenuClick,
     this.note = "",
+    this.isSelected = false,
   });
 
   @override
@@ -61,7 +63,14 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
         hoverColor: theme.colorScheme.tertiary.withAlpha(32),  // Hover-color
         child: Container(
           alignment: Alignment.center,
-          child: Stack(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all( // Highlight a selected item
+              color: isSelected ? theme.colorScheme.primary : Colors.transparent,
+              width: 2
+            ),
+          ),
+          child: Stack( // Draw the content of the item
             children: [
               Positioned(
                 top: 2,
@@ -106,6 +115,7 @@ class CodeJudgeMobileItem extends StatelessWidget {
   final ValueChanged<TapUpDetails>? onRightClick;
   final ValueChanged<Offset>? onMenuClick;
   final String note;
+  final bool isSelected;
 
   const CodeJudgeMobileItem({
     super.key,
@@ -115,6 +125,7 @@ class CodeJudgeMobileItem extends StatelessWidget {
     this.onRightClick,
     this.onMenuClick,
     this.note = "",
+    this.isSelected = false,
   });
 
   @override
@@ -145,7 +156,14 @@ class CodeJudgeMobileItem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(8.0),
           alignment: Alignment.centerLeft,
-          child: Row(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all( // Highlight a selected item
+              color: isSelected ? theme.colorScheme.primary : Colors.transparent,
+              width: 2
+            ),
+          ),
+          child: Row( // Draw the content of the item
               children: [
                 Expanded(
                   child: Padding(
