@@ -35,3 +35,20 @@ class ExerciseDatamodel {
     this.isSelected = false,
   });
 }
+
+// This defines which values a submission has
+class SubmissionDatamodel {
+  String name;
+  String task;
+  String code;
+  String output;
+  String studentName;
+
+  SubmissionDatamodel({
+    required this.name,
+    required this.task,
+    required this.code,
+    required this.output,
+    required this.studentName
+  });
+}
