@@ -38,14 +38,14 @@ class ExerciseDatamodel {
 
 // This defines which values a submission has
 class SubmissionDatamodel {
-  String name;
+  String exerciseName;
   String task;
   String code;
   String output;
   String studentName;
 
   SubmissionDatamodel({
-    required this.name,
+    required this.exerciseName,
     required this.task,
     required this.code,
     required this.output,
