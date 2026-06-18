@@ -24,6 +24,7 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
   final ValueChanged<Offset>? onMenuClick;
   final String note;
   final bool isSelected;
+  final bool showMenu;
 
   const CodeJudgeDesktopAndTabletItem({
     super.key,
@@ -34,6 +35,7 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
     this.onMenuClick,
     this.note = "",
     this.isSelected = false,
+    this.showMenu = true,
   });
 
   @override
@@ -72,26 +74,28 @@ class CodeJudgeDesktopAndTabletItem extends StatelessWidget{
           ),
           child: Stack( // Draw the content of the item
             children: [
-              Positioned(
-                top: 2,
-                right: 2,
-                child: IconButton(
-                  key: buttonKey,
-                  onPressed: () {
-                    // Get the position of the button
-                    final RenderBox button = buttonKey.currentContext!.findRenderObject() as RenderBox;
-                    Offset position = button.localToGlobal(Offset.zero,);
+              showMenu
+              ? Positioned(
+                  top: 2,
+                  right: 2,
+                  child: IconButton(
+                    key: buttonKey,
+                    onPressed: () {
+                      // Get the position of the button
+                      final RenderBox button = buttonKey.currentContext!.findRenderObject() as RenderBox;
+                      Offset position = button.localToGlobal(Offset.zero,);
 
-                    if (onMenuClick != null) {
-                      onMenuClick!.call(position);
-                    }
-                  },
-                  icon: Icon(
-                    Icons.more_vert_outlined,
-                    size: 20,
+                      if (onMenuClick != null) {
+                        onMenuClick!.call(position);
+                      }
+                    },
+                    icon: Icon(
+                      Icons.more_vert_outlined,
+                      size: 20,
+                    ),
                   ),
-                ),
-              ),
+                )
+              : SizedBox.shrink(),
               Center(
                 child: Text(title, style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold))
               ),
@@ -116,6 +120,7 @@ class CodeJudgeMobileItem extends StatelessWidget {
   final ValueChanged<Offset>? onMenuClick;
   final String note;
   final bool isSelected;
+  final bool showMenu;
 
   const CodeJudgeMobileItem({
     super.key,
@@ -126,6 +131,7 @@ class CodeJudgeMobileItem extends StatelessWidget {
     this.onMenuClick,
     this.note = "",
     this.isSelected = false,
+    this.showMenu = true,
   });
 
   @override
@@ -175,22 +181,24 @@ class CodeJudgeMobileItem extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 8.0),
                   child: Text(note, style: TextStyle(fontSize: 12, fontWeight: FontWeight.w200)),
                 ),
-                IconButton(
-                  key: buttonKey,
-                  onPressed: () {
-                    // Get the position of the button
-                    final RenderBox button = buttonKey.currentContext!.findRenderObject() as RenderBox;
-                    Offset position = button.localToGlobal(Offset.zero,);
+                showMenu
+                  ? IconButton(
+                    key: buttonKey,
+                    onPressed: () {
+                      // Get the position of the button
+                      final RenderBox button = buttonKey.currentContext!.findRenderObject() as RenderBox;
+                      Offset position = button.localToGlobal(Offset.zero,);
 
-                    if (onMenuClick != null) {
-                      onMenuClick!.call(position);
-                    }
-                  },
-                  icon: Icon(
-                    Icons.more_vert_outlined,
-                    size: 20,
-                  ),
-                ),
+                      if (onMenuClick != null) {
+                        onMenuClick!.call(position);
+                      }
+                    },
+                    icon: Icon(
+                      Icons.more_vert_outlined,
+                      size: 20,
+                    ),
+                  )
+                  : SizedBox.shrink(),
               ],
             )
         ),
